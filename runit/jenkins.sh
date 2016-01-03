@@ -23,5 +23,6 @@ copy_reference_file() {
 export -f copy_reference_file
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c "copy_reference_file '{}'" \;
+chown -R jenkins:jenkins /var/jenkins_home
 
 exec chpst -u jenkins java $JAVA_OPTS -jar /usr/share/jenkins/jenkins.war $JENKINS_OPTS "$@"
