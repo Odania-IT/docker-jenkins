@@ -1,5 +1,4 @@
 #! /bin/bash
-
 set -e
 
 # Copy files from /usr/share/jenkins/ref into /var/jenkins_home
